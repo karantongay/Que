@@ -1,0 +1,102 @@
+<!-- <br>
+<h1 class="h1">User Profile: <%= @user.email %></h1>
+<br>
+<center>
+
+<div class="col-md-4 content-right" style="float: left;">
+					<div class="cntnt-img">
+					</div>
+					<div class="bnr-img">
+						<img src="../assets/profile-img.png" width=165px height=165px alt=""/>
+					</div>
+					<div class="bnr-text">
+						<h1>Quick Stats</h1>
+
+					</div>
+					<div class="btm-num">
+						<ul>
+							<li>
+								<h4><%= @user.all_following.count %></h4>
+								<h5>Following</h5>
+							</li>
+							<li>
+								<h4><%= @user.followers_count %></h4>
+								<h5>Followers</h5>
+							</li>
+							<li>
+								<h4><%= @answer1.count %></h4>
+								<h5>Answers</h5>
+							</li>
+						</ul>
+					</div>
+				</div>
+				</center>
+
+<div class="col-md-4" style="position:relative; float:left; background-color: lightgreen; padding-top:10px; width: 450px;height: 385px;">
+<div class="bnr-num">
+	<center><img src="../assets/details-img.png" width=160px height=160px alt=""/>
+	<br><br>
+	Details</center>
+</div>
+<table class="table">
+<tr>
+<td>
+Registered Email:
+</td>
+<td>
+<%= @user.email %>
+</td>
+</tr>
+<tr>
+<td>
+No of Questions asked:
+</td>
+<td>
+<%= @question1.count %>
+</td>
+</tr>
+<tr>
+<td>
+No of Questions Answered:
+</td>
+<td>
+<%= @answer1.count %>
+</td>
+</tr>
+<br>
+</table>
+</div>
+<div class="col-md-2" style="position:relative; float:left; background-color: #b3f2fd; padding-top:10px; width: 310px;height: 200px;">
+Followers:
+<br><br>
+<% @followers1.each #do |f| %>
+<%= link_to f.email, profile_path(f) %>
+<br>
+<% #end %>
+<br><br><br><br><br><br>
+</div>
+<div class="col-md-2" style="position:relative; border:thin yellow; overflow:auto; float:left; background-color: #b3f2fd; padding-top:10px; width: 310px; height: 185px;">
+Following:
+<br><br>
+<% @following1.each #do |f| %>
+<%= link_to f.email, profile_path(f) %>
+<br>
+<% #end %>
+</div>
+<div class="clearfix"> </div>
+<br><br>
+<h3 class="h3">My Questions</h3>
+<br>
+<% @question1.each #do |q| %>
+Title: <%= link_to q.title, question_path(q) %>
+<br>
+<% #end %>
+<br><br>
+<h3 class="h3">My Answers</h3>
+<br>
+<% @answer1.each # do |a| %>
+<% @ques # = Question.find(a.question_id) %>
+Answered To: <%= link_to @ques.title, question_path(@ques) %>
+<br>
+<% #end %>
+<br><br> -->

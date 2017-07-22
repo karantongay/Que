@@ -1,0 +1,12 @@
+<%= form_tag(questions_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+<%= submit_tag "Search" %>
+<% end %>
+
+<% if @posts.present? %>
+  <% @posts.each do |q| %>
+  <%= q.title %>
+  <% end %>
+<% else %>
+  <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+<% end %>

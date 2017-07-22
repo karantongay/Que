@@ -1,0 +1,23 @@
+<% if answer.contents != nil %>
+<div class="answer" style="background-color:lightblue; height:220px; padding:20px; border-radius:25px;">
+
+   <p>
+    <strong>Answer:</strong>
+    <%= answer.contents %>
+  </p>
+  <br><br>
+  <p>
+    <strong>Poster:</strong>
+    <%= answer.poster %> | <strong>Answered: </strong><%= answer.created_at %>
+  </p>
+
+  <p>
+  <br>
+  <button class="btn btn-danger"><%= link_to 'Delete Answer', [answer.question, answer],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+  </button>
+</p>
+</div>
+<br>
+<% end %>

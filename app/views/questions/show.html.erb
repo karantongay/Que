@@ -1,0 +1,40 @@
+<style sheet="text/css">
+#editbtn a:link, #editbtn a:hover
+{
+	text-decoration-color: white;
+	text-decoration: none;
+	text-decoration-color: none;
+}
+</style>
+
+<p>
+  <h2 class="h2">Question: <%= @question.title %></h2>
+  <h6 class="h4">Asked By: <%= @question.askedby %></h6>
+</p>
+<br>
+<div class="desc" style="background-color: lightblue; height:150px; border-radius:25px; padding: 25px;">
+<p class="p">
+  <strong>Description:</strong>
+  <%= @question.contents %>
+</p>
+
+<br>
+</div>
+<br>
+<div id = "editbtn">
+<a class="btn btn-warning" id="edit_question" href=<%= edit_question_path(@question) %> rel="nofollow">Edit This Question</a>
+
+<a class="btn btn-danger" id="delete_question" data-confirm="Are you sure?" data-method="delete" href=<%= question_path(@question) %> rel="nofollow">Delete</a>
+
+  </div>
+
+<h2 class="h2">Add an Answer to this Question:</h2>
+
+<%= render 'answers/form' %>
+
+<h2 class="h2">Previous answers to this Question</h2>
+
+
+<%= render @question.answers %>
+
+<div class="clearfix"> </div>

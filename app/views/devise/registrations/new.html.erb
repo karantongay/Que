@@ -1,0 +1,28 @@
+<%= render "formlayout", layout: "formlayout" %>
+<div class="main-agileits">
+<h1>Que Sign up</h1>
+<div class="mainw3-agileinfo">
+ <!-- login form -->
+      <div class="login-form">
+        <div class="login-agileits-top">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+            <p> <%= f.label :email %> </p>
+            <%= f.text_field :email, autofocus: true %>
+            <p>Password</p>
+            <% if @minimum_password_length %>
+            <p>(<%= @minimum_password_length %> characters minimum)</p>
+            <% end %>
+            <%= f.password_field :password, autocomplete: "off" %>
+            <p><%= f.label :password_confirmation %></p>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+
+    </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+ <div class="login-agileits-bottom">
+        <h6><%= render "devise/shared/links" %></h6>
+        </div>

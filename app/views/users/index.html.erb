@@ -1,0 +1,30 @@
+<br>
+<h1 class="h1">List of Users</h1>
+
+My Follower Count: <%= current_user.followers_count %><br>
+My Following Count: <%= current_user.all_following.count %>
+<br>
+<br>
+<table class="table table-fixed">
+<tr>
+<td>User</td>
+<td>Follow / Unfollow</td>
+</tr>
+<%  %>
+<% @users.each do |user| %>
+<% if user.email != current_user.email %>
+<tr>
+<td>
+  <%= link_to user.email, profile_path(user) %>
+</td>
+<td>
+<% if current_user.following?(user) %>
+<%= link_to "Unfollow", unfollow_user_path(user) %><br/>
+<% else %>
+<%= link_to "Follow", follow_user_path(user) %><br/>
+<% end %>
+</td>
+  <% end %>
+<% end %>
+
+</table>
