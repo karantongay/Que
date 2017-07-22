@@ -13,9 +13,9 @@ Following things you may require to get this project up and running:
 
 * Database : MySQL
 
-# Quanda
+# Que
 
-"Quanda" is a simple Q & A portal developed using Ruby on Rails.
+"Que" is a simple Q & A portal developed using Ruby on Rails.
 
 It features all the basic functionalities that are required for a Question and Answer Portal.
 
